@@ -5,6 +5,17 @@ import (
 	"strings"
 )
 
+// writeLine writes HTML to the buffer.
+func writeRaw(bf *bytes.Buffer, s string) {
+	bf.WriteString(s)
+}
+
+// writeLine writes an HTML line to the buffer.
+func write(bf *bytes.Buffer, s string, indent int) {
+	writeIndent(bf, indent)
+	bf.WriteString(s)
+}
+
 // writeLine writes an HTML line to the buffer.
 func writeLine(bf *bytes.Buffer, s string, indent int) {
 	writeLineFeed(bf)
